@@ -1,0 +1,35 @@
+1) What is the difference between the terms concurrency and parallelism?
+Concurrency is the concern with managing access to shared state from different threds while parallelism is concerned with utilizing multiple processors/cores to improve the performance of a computation. Concurrency helps with programming computers to run in parallel. Concurrency does not imply parallelism as we can run concurrent programs on the same process while parallelism allows you to run different processes concurrently.
+ 
+2) What is the difference between shared memory and message-passing parallel computer models?
+Shared memory is one in which all processors share one copy of all available data. To avoid race conditions we may need to use atomicity and synchronizations. There are scalability issues which restrict the amount of cores one can run. Distributed memory solves the scalability issue of shared memory where each core has local memory. In order to share information the cores need to have an explicit data exchange.
+ 
+3) What is the difference between multi-threaded control parallelism and data parallelism?
+Multi-threaded control parallelism means a single process can create many concurrent threads. Each thread has its own execution path with its own local state and shared resources. Data parallelism is where you perform the same operation on all the processors but each processor is doing the computation on different data. Each component of the vector operation is being computed independently in parallel in order to speed up the processing.
+ 
+4) What is the difference between speedup and efficiency of parallel computation?
+Speedup is a ratio that measures the benefit of decreased time of solving a problem in parallel. It is the ratio of the time taken to solve a problem sequentially on a single processor and the time required to solve the same problem on any number of identical processors. This only occurs in a simplified state where there are easy tasks that operate with little communication.
+Since linear speed is not very achievable due to idle times, efficiency is a measure of how much of the execution time a processing element puts towards doing meaningful work given as a fraction of time spent.
+5)  You have to run a program that performs 4000 GigaFlop computation, and your core computes at a speed 30 TeraFlop/sec. How long will the program run for in seconds?
+Execution Time = Work / Speed
+Et = (4000*1e9) / (30*1e12)
+Et = 0.13333
+6) A floating point program just completed in 0.32 seconds on a core with speed 2 TeraFlop/sec, how many GigaFlop does the program perform?
+Execution Time = Work / Speed
+0.32 = W / (2*1e12)
+0.32(2*1e12) = W
+W = 640000000000
+W = 640 GigaFlop
+ 
+7) You have to run a program that performs 2000 TeraFlops, and your core computes at speed 450 GigaFlop/sec. How long will the program run?
+Execution Time = Work / Speed
+Et = (2000*1e12)/(450*1e9)
+Et = 4444.44
+Et = 1 hour 14 min
+ 
+8) A program that performs 3000 GigaFlop just ran in 1.5 minutes on one single core. What is the core speed in TeraFlops per second?
+Execution Time = Work / Speed
+90 = (3000*1e9)/S
+S = (3000*1e9)/90
+33333333333.3 Flops/Sec
+
