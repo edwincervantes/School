@@ -1,0 +1,11 @@
+1) Read the message from  “../data/plaintext.txt and convert each char into ASCII(should be 128) and obtain the initial state
+2) Read the two subkeys from “../data/subkey example.txt and calculate one AddKey before Round 1 with subkey0
+3) Compute all the operations for Round 1 (SubBytes, ShiftRows, MixColumns, and one AddKey with subkey1) 
+	-matrix for MixColumns can be found in Lecture 5, and how to perform
+		the corresponding multiplication over bytes can be found in Lecture 10.
+4)Screenshot the output and include it in the report
+
+____________________________________________________________________________________________________________________
+
+Read the first subkey from file “../data/subkey example.txt”, generate the next subkey using subkey schedule algorithm in AES. Print the next subkey in terminal and write the result to a file
+“../data/result subkey.txt”. The result needs to be printed and written in hexadecimal.

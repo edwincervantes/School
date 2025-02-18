@@ -1,0 +1,30 @@
+$ebp = 0xbfffea88
+
+Return address stored = $ebp + 4
+
+start of buffer = 0xbfffea08
+
+d = 128
+
+top of stack = $ebp - d
+
+difference between start of buffer and ra = ra - top of stack
+    (ebp + 4) - (ebp - d)
+    (x88 + 4) - (x88 - 128)
+    (136 + 4) - (136 - 128)
+    (140 - 8) = 132 = x84
+
+attacker fills content[132:136] with the return address x
+
+x = $ebp - 128 + 517(bytes in badfile) - 30(bytes in shellcode)
+x = $ebp - 128 + 517 - 30
+x =  $ebp + 359
+x(hex) = 0xbfffea88 + 
+x = bfffebef
+
+attacker fills content[132:136] with 0xbfffebef
+
+Offset: 0xbfffebef - 0xbfffeaf8 = 0xf7 = 247
+
+
+
